@@ -5,6 +5,7 @@ import ToasterProvider from '@/providers/ToasterProvider';
 import Navbar from '@/components/navbar/Navbar';
 import RegisterModal from '@/components/modals/RegisterModal';
 import LoginModal from '@/components/modals/LoginModal';
+import RentModal from '@/components/modals/RentModal';
 import getCurrentUser from '@/actions/getCurrentUser';
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ToasterProvider />
         <RegisterModal />
         <LoginModal />
+        <RentModal />
         <Navbar currentUser={currentUser} />
         {children}
       </body>
