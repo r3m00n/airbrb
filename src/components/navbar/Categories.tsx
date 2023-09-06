@@ -1,3 +1,5 @@
+'use client';
+
 import { usePathname, useSearchParams } from 'next/navigation';
 import { IconType } from 'react-icons';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
