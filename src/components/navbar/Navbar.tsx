@@ -1,18 +1,16 @@
 'use client';
 
-import { User } from '@prisma/client';
+import { SafeUser } from '@/types';
 import { Container } from '../Container';
 import Logo from './Logo';
 import Search from './Search';
 import UserMenu from './UserMenu';
 
 interface NavbarProps {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 }
 
 const Navbar = ({ currentUser }: NavbarProps) => {
-  console.log(currentUser);
-
   return (
     <nav className="fixed z-10 w-full bg-white shadow-sm">
       <div className="py-4 border-b-[1px]">
