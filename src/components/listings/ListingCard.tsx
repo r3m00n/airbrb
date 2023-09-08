@@ -78,7 +78,7 @@ const ListingCard = (props: ListingCardProps) => {
           </div>
         </div>
         <div className="text-lg font-semibold">
-          {location?.region}, {location?.label}
+          {location?.label}, {location?.region}
         </div>
         <div className="font-light text-neutral-500">
           {reservationDate || data.category}
