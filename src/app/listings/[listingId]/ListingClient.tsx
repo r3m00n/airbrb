@@ -70,7 +70,7 @@ const ListingClient = (props: ListingCardProps) => {
       .then(() => {
         toast.success('Listing reserved!');
         setDateRange(initialDateRange);
-        router.refresh(); // redirect to 'trips'
+        router.push('/trips');
       })
       .catch(() => toast.error('Something went wrong.'))
       .finally(() => setIsLoading(false));
