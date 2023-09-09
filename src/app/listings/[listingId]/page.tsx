@@ -13,7 +13,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
   const reservations = await getReservations(params);
   const currentUser = await getCurrentUser();
 
-  if (!listing) <EmptyState />;
+  if (!listing) return <EmptyState />;
 
   return (
     <ListingClient
