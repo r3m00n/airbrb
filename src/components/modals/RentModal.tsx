@@ -147,7 +147,9 @@ const RentModal = () => {
           value={location}
           onChange={value => setCustomValue('location', value)}
         />
-        <Map center={location?.latlang} />
+        <div className="h-[35vh] rounded-lg">
+          <Map center={location?.latlang} />
+        </div>
       </div>
     );
   }
