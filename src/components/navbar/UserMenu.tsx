@@ -45,7 +45,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
         </div>
         <div
           onClick={toggleOpen}
-          className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
+          className="flex flex-row items-center gap-3 p-4 transition border rounded-full cursor-pointer md:py-1 md:px-2 border-neutral-200 hover:shadow-md"
         >
           <AiOutlineMenu />
           <div className="hidden md:block">

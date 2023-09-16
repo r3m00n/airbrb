@@ -25,7 +25,7 @@ const Button = (props: ButtonProps) => {
       }
       ${
         small
-          ? 'py-1 text-sm font-light border-[1px]'
+          ? 'py-1 text-sm font-light border'
           : 'py-3 text-base font-semibold border-2'
       }`}
     >
