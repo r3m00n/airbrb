@@ -20,13 +20,13 @@ const initialDateRange = {
   key: 'selection',
 };
 
-interface ListingCardProps {
+interface ListingClientProps {
   reservations?: SafeReservation[];
   listing: SafeListing & { user: SafeUser };
   currentUser?: SafeUser | null;
 }
 
-const ListingClient = (props: ListingCardProps) => {
+const ListingClient = (props: ListingClientProps) => {
   const { listing, currentUser, reservations = [] } = props;
 
   const loginModal = useLoginModal();
