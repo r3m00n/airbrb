@@ -32,14 +32,14 @@ const Counter = (props: CounterProps) => {
       <div className="flex flex-row items-center gap-4">
         <div
           onClick={onReduce}
-          className="w-10 h-10 rounded-full border-[1px] border-neutral-400 flex items-center justify-center text-neutral-600 cursor-pointer hover:opacity-80 transition select-none"
+          className="flex items-center justify-center w-10 h-10 transition border rounded-full cursor-pointer select-none border-neutral-400 text-neutral-600 hover:opacity-80"
         >
           <AiOutlineMinus />
         </div>
         <div className="text-xl font-light text-neutral-600">{value}</div>
         <div
           onClick={onAdd}
-          className="w-10 h-10 rounded-full border-[1px] border-neutral-400 flex items-center justify-center text-neutral-600 cursor-pointer hover:opacity-80 transition select-none"
+          className="flex items-center justify-center w-10 h-10 transition border rounded-full cursor-pointer select-none border-neutral-400 text-neutral-600 hover:opacity-80"
         >
           <AiOutlinePlus />
         </div>
