@@ -26,7 +26,26 @@ const ImageUpload = ({ onChange, value }: ImageUploadProps) => {
     <CldUploadWidget
       onUpload={handleUpload}
       uploadPreset="cvzdwlpi"
-      options={{ maxFiles: 1 }}
+      options={{
+        maxFiles: 1,
+        sources: ['local'],
+        styles: {
+          palette: {
+            sourceBg: '#f4f4f5',
+            windowBorder: '#90a0b3',
+            tabIcon: '#555A5F',
+            inactiveTabIcon: '#555a5f',
+            menuIcons: '#555a5f',
+            link: '#F43F5D',
+            action: '#339933',
+            inProgress: '#F43F5D',
+            complete: '#339933',
+            error: '#cc0000',
+            textDark: '#000000',
+            textLight: '#fcfffd',
+          },
+        },
+      }}
     >
       {({ open }) => {
         return (
