@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Heading from '@/components/Heading';
 import useCountries from '@/hooks/useCountries';
