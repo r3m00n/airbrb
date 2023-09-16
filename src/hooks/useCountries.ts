@@ -1,12 +1,14 @@
 import countries from 'world-countries';
 
-const formattedCountries = countries.map(country => ({
-  value: country.cca2,
-  label: country.name.common,
-  flag: country.flag,
-  latlang: country.latlng,
-  region: country.region,
-}));
+const formattedCountries = countries
+  .filter(country => country.name.common !== 'Caribbean Netherlands')
+  .map(country => ({
+    value: country.cca2,
+    label: country.name.common,
+    flag: country.flag,
+    latlang: country.latlng,
+    region: country.region,
+  }));
 
 const useCountries = () => {
   const getAll = () => formattedCountries;
