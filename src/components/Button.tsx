@@ -21,11 +21,7 @@ const Button = (props: ButtonProps) => {
           ? 'bg-white border-black text-black'
           : 'bg-rose-500 border-rose-500 text-white'
       }
-      ${
-        small
-          ? 'py-1 text-sm font-light border'
-          : 'py-3 text-base font-semibold border-2'
-      }`}
+      ${small ? 'py-1 text-sm font-light border' : 'py-3 font-semibold border-2'}`}
     >
       {Icon && <Icon className="absolute top-3 left-4" size={24} />}
       {label}
