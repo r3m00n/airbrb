@@ -110,7 +110,9 @@ const SearchModal = () => {
         onChange={value => setLocation(value as CountrySelectValue)}
       />
       <hr />
-      <Map center={location?.latlang} />
+      <div className="h-[35vh] rounded-lg">
+        <Map center={location?.latlang} />
+      </div>
     </div>
   );
 
