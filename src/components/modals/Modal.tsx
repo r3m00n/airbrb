@@ -35,6 +35,19 @@ const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     setShowModal(isOpen);
+
+    const handleEscapeKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscapeKeyPress);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('keydown', handleEscapeKeyPress);
+    };
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
@@ -63,7 +76,10 @@ const Modal = (props: ModalProps) => {
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-neutral-800/70">
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-neutral-800/70"
+        onClick={handleClose}
+      >
         {/* lg:h-auto */}
         <div className="relative w-full h-full mx-auto my-6 md:w-2/3 lg:w-1/2 xl:w-2/5 md:h-auto">
           {/* CONTENT */}
@@ -71,6 +87,7 @@ const Modal = (props: ModalProps) => {
             className={`translate duration-300 h-full ${
               showModal ? 'translate-y-0' : 'translate-y-full'
             } ${showModal ? 'opacity-100' : 'opacity-0'}`}
+            onClick={e => e.stopPropagation()}
           >
             <div className="relative flex flex-col w-full h-full bg-white border-0 rounded-lg shadow-lg outline-none translate md:h-auto focus:outline-none">
               {/* HEADER */}
