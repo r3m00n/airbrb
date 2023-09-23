@@ -1,10 +1,12 @@
 import getCurrentUser from '@/actions/getCurrentUser';
 import getListings from '@/actions/getListings';
-import EmptyState from '@/components/EmptyState';
+import EmptyState from '@/components/ErrorMessage';
 import PropertiesClient from './PropertiesClient';
+import useRentModal from '@/hooks/useRentModal';
 
 const Properties = async () => {
   const currentUser = await getCurrentUser();
+  const rentModal = useRentModal();
 
   if (!currentUser) return <EmptyState title="Unauthorized" subtitle="Please login" />;
 
@@ -15,6 +17,8 @@ const Properties = async () => {
       <EmptyState
         title="No properties found"
         subtitle="Looks like you no properties."
+        resetLabel="Create one now!"
+        resetAction={() => rentModal.onOpen()}
       />
     );
 

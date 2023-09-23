@@ -1,6 +1,6 @@
 import getCurrentUser from '@/actions/getCurrentUser';
 import getReservations from '@/actions/getReservations';
-import EmptyState from '@/components/EmptyState';
+import EmptyState from '@/components/ErrorMessage';
 import ReservationsClient from './ReservationsClient';
 
 const ReservationsPage = async () => {
@@ -15,6 +15,7 @@ const ReservationsPage = async () => {
       <EmptyState
         title="No reservations found"
         subtitle="Looks like you have no reservations on your properties."
+        resetLabel="Reserve one now!"
       />
     );
 

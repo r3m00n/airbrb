@@ -1,7 +1,7 @@
 import getCurrentUser from '@/actions/getCurrentUser';
 import getFavoriteListings from '@/actions/getFavoriteListings';
 
-import EmptyState from '@/components/EmptyState';
+import EmptyState from '@/components/ErrorMessage';
 import FavoritesClient from './FavoritesClient';
 
 const FavoritesPage = async () => {
@@ -16,6 +16,7 @@ const FavoritesPage = async () => {
       <EmptyState
         title="No favorites found"
         subtitle="Looks like you have no favorite listings."
+        resetLabel="Let's change that!"
       />
     );
 

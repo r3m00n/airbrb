@@ -1,7 +1,10 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import getCurrentUser from '@/actions/getCurrentUser';
 import getListings, { IListingsParams } from '@/actions/getListings';
 import Container from '@/components/Container';
-import EmptyState from '@/components/EmptyState';
+import EmptyState from '@/components/ErrorMessage';
 import ListingCard from '@/components/listings/ListingCard';
 
 interface HomeProps {
@@ -11,8 +14,17 @@ interface HomeProps {
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
+  const router = useRouter();
 
-  if (listings.length === 0) return <EmptyState showReset />;
+  if (listings.length === 0)
+    return (
+      <EmptyState
+        title="No exact matches"
+        subtitle="Try changing or removing some of your filters"
+        resetAction={() => router.push('/')}
+        resetLabel="Remove all filters"
+      />
+    );
 
   return (
     <Container>

@@ -7,12 +7,14 @@ interface ErrorStateProps {
   error: Error;
 }
 
-const ErrorState = ({ error }: ErrorStateProps) => {
+const NotFound = ({ error }: ErrorStateProps) => {
   useEffect(() => {
     console.error(error);
   }, [error]);
 
-  return <EmptyState title="Uh oh" subtitle="Something went wrong!" />;
+  return (
+    <EmptyState title="Uh oh" subtitle="Couldn't find what you were looking for." />
+  );
 };
 
-export default ErrorState;
+export default NotFound;
