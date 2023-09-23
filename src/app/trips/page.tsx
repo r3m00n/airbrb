@@ -3,6 +3,10 @@ import getReservations from '@/actions/getReservations';
 import EmptyState from '@/components/EmptyState';
 import TripsClient from './TripsClient';
 
+export const metadata = {
+  title: 'Trips',
+};
+
 const TripsPage = async () => {
   const currentUser = await getCurrentUser();
 
