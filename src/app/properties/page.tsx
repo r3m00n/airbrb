@@ -1,3 +1,5 @@
+'use client';
+
 import getCurrentUser from '@/actions/getCurrentUser';
 import getListings from '@/actions/getListings';
 import EmptyState from '@/components/ErrorMessage';
