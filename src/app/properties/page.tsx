@@ -3,6 +3,10 @@ import getListings from '@/actions/getListings';
 import EmptyState from '@/components/EmptyState';
 import PropertiesClient from './PropertiesClient';
 
+export const metadata = {
+  title: 'Properties',
+};
+
 const Properties = async () => {
   const currentUser = await getCurrentUser();
 
