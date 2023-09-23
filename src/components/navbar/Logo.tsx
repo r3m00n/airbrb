@@ -1,20 +1,17 @@
-'use client';
-
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Logo = () => {
-  const router = useRouter();
-
   return (
-    <Image
-      onClick={() => router.push('/')}
-      alt="Airbrb Logo"
-      className="hidden cursor-pointer md:block"
-      height="100"
-      width="100"
-      src="/images/logo.png"
-    />
+    <Link href="/">
+      <Image
+        alt="Airbrb Logo"
+        className="hidden cursor-pointer md:block"
+        height="100"
+        width="100"
+        src="/images/logo.png"
+      />
+    </Link>
   );
 };
 
