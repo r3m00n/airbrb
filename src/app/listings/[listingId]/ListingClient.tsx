@@ -94,7 +94,7 @@ const ListingClient = (props: ListingClientProps) => {
         <div className="flex flex-col gap-6">
           <ListingHead
             title={listing.title}
-            imageSrc={listing.imageSrc}
+            imageSrc={listing.imageSrc || '/images/house-placeholder.png'}
             locationValue={listing.locationValue}
             id={listing.id}
             currentUser={currentUser}
