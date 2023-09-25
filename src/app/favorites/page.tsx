@@ -4,6 +4,10 @@ import getFavoriteListings from '@/actions/getFavoriteListings';
 import EmptyState from '@/components/EmptyState';
 import FavoritesClient from './FavoritesClient';
 
+export const metadata = {
+  title: 'Favorites',
+};
+
 const FavoritesPage = async () => {
   const currentUser = await getCurrentUser();
 
