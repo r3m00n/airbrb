@@ -33,6 +33,16 @@ const Modal = (props: ModalProps) => {
 
   const [showModal, setShowModal] = useState(isOpen);
 
+  const handleClose = useCallback(() => {
+    if (disabled) return;
+
+    setShowModal(false);
+
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  }, [disabled, onClose]);
+
   useEffect(() => {
     setShowModal(isOpen);
 
@@ -48,17 +58,7 @@ const Modal = (props: ModalProps) => {
     return () => {
       window.removeEventListener('keydown', handleEscapeKeyPress);
     };
-  }, [isOpen]);
-
-  const handleClose = useCallback(() => {
-    if (disabled) return;
-
-    setShowModal(false);
-
-    setTimeout(() => {
-      onClose();
-    }, 300);
-  }, [disabled, onClose]);
+  }, [isOpen, handleClose]);
 
   const handleSubmit = useCallback(() => {
     if (disabled) return;
@@ -113,11 +113,7 @@ const Modal = (props: ModalProps) => {
                       onClick={handleSecondaryAction}
                     />
                   )}
-                  <Button
-                    label={actionLabel}
-                    disabled={disabled}
-                    onClick={handleSubmit}
-                  />
+                  <Button label={actionLabel} disabled={disabled} onClick={handleSubmit} />
                 </div>
                 {/* FOOTER */}
                 {footer}
